@@ -5,7 +5,7 @@ variables:
   buildConfiguration: 'Release'
 
 jobs:
-- job: Ubuntu
+- job: 'Ubuntu'
   pool:
     vmImage: 'Ubuntu-16.04'
 
@@ -16,9 +16,9 @@ jobs:
     inputs:
       command: test
       projects: '**/*Tests/*.csproj'
-      arguments: '--configuration $(buildConfiguration)
+      arguments: '--configuration $(buildConfiguration)'
 
-- job: Windows
+- job: 'Windows'
   pool:
     vmImage: 'VS2017-Win2016'
 
