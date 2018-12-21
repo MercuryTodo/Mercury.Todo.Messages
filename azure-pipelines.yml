@@ -1,0 +1,32 @@
+trigger:
+- master
+
+variables:
+  buildConfiguration: 'Release'
+
+jobs:
+- job: Ubuntu
+  pool:
+    vmImage: 'Ubuntu-16.04'
+
+  steps:
+  - script: dotnet build
+    displayName: 'dotnet build $(buildConfiguration)'
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: test
+      projects: '**/*Tests/*.csproj'
+      arguments: '--configuration $(buildConfiguration)
+
+- job: Windows
+  pool:
+    vmImage: 'VS2017-Win2016'
+
+  steps:
+  - script: dotnet build
+    displayName: 'dotnet build $(buildConfiguration)'
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: test
+      projects: '**/*Tests/*.csproj'
+      arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
