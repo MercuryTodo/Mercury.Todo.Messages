@@ -5,7 +5,7 @@ variables:
   buildConfiguration: 'Release'
   Major: '0'
   Minor: '0'
-  Patch: '1'
+  patch: $[counter('versioncounter', 100)]
 
 jobs:
 - job: 'Ubuntu'
@@ -39,5 +39,5 @@ jobs:
       command: test
       projects: '**/*Tests/*.csproj'
       arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
-  - script: dotnet pack /p:PackageVersion=$(Major).$(Minor).$(Patch).$(date:yyyyMMdd)
+  - script: dotnet pack /p:PackageVersion=$(Major).$(Minor).$(Patch)
     displayName: 'dotnet pack'
