@@ -39,11 +39,4 @@ jobs:
       command: test
       projects: '**/*Tests/*.csproj'
       arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
-  - task: NuGetCommand@2
-    displayName: 'dotnet pack'
-    inputs:
-      command: pack
-      versioningScheme: byPrereleaseNumber
-      majorVersion: '$(Major)'
-      minorVersion: '$(Minor)'
-      patchVersion: '$(Patch)'
+  - script: dotnet pack /p:PackageVersion=$(Major).$(Minor).$(Patch).$(date:yyyyMMdd)
