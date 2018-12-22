@@ -3,6 +3,9 @@ trigger:
 
 variables:
   buildConfiguration: 'Release'
+  Major: '0'
+  Minor: '0'
+  Patch: '1'
 
 jobs:
 - job: 'Ubuntu'
@@ -11,9 +14,9 @@ jobs:
 
   steps:
   - script: dotnet build
-    displayName: 'dotnet build $(buildConfiguration)'
+    displayName: 'Dotnet build $(buildConfiguration)'
   - task: DotNetCoreCLI@2
-    displayName: 'dotnet test $(buildConfiguration)'
+    displayName: 'Dotnet test $(buildConfiguration)'
     inputs:
       command: test
       projects: '**/*Tests/*.csproj'
@@ -25,15 +28,15 @@ jobs:
 
   steps:
   - script: dotnet build
-    displayName: 'dotnet build $(buildConfiguration)'
+    displayName: 'Dotnet build $(buildConfiguration)'
   - task: DotNetCoreCLI@2
-    displayName: 'dotnet test $(buildConfiguration)'
+    displayName: 'Dotnet test $(buildConfiguration)'
     inputs:
       command: test
       projects: '**/*Tests/*.csproj'
       arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
   - task: NuGetCommand@2
-    displayName: 'dotnet pack $(buildConfiguration)'
+    displayName: 'Dotnet pack'
     inputs:
       command: pack
       packagesToPack: '**/*.csproj'
