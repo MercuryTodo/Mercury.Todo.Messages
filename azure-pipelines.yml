@@ -31,9 +31,8 @@ jobs:
   steps:
   - script: dotnet restore
     displayName: 'dotnet restore'
-  - script: dotnet build
+  - script: dotnet build $(buildConfiguration)
     displayName: 'dotnet build'
-    arguments: '--configuration $(buildConfiguration)'
   - task: DotNetCoreCLI@2
     displayName: 'dotnet test'
     inputs:
