@@ -39,5 +39,5 @@ jobs:
       command: test
       projects: '**/*Tests/*.csproj'
       arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
-  - script: dotnet pack /p:PackageVersion=$(Major).$(Minor).$(Patch)
+  - script: dotnet pack /p:PackageVersion=$(Major).$(Minor).$(Patch) --configuration $(buildConfiguration)
     displayName: 'dotnet pack'
