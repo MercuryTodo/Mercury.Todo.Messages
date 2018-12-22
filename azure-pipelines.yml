@@ -39,9 +39,10 @@ jobs:
       command: test
       projects: '**/*Tests/*.csproj'
       arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
-  - task: PublishBuildArtifacts@1
+  - script: dotnet pack /p:PackageVersion=$(Major).$(Minor).$(Patch) /p:publishUrl="$(Build.ArtifactStagingDirectory)\" --configuration $(buildConfiguration)
+    displayName: 'dotnet pack'
+  - task: PublishBuildArtifacts@2
     inputs:
-      pathtoPublish: .\Working
       artifactName: artifacts
       parallel: true
       parallelCount: 8
