@@ -26,7 +26,17 @@ jobs:
   - script: dotnet build
     displayName: 'dotnet build $(buildConfiguration)'
   - task: DotNetCoreCLI@2
+    displayName: 'dotnet test $(buildConfiguration)'
     inputs:
       command: test
       projects: '**/*Tests/*.csproj'
       arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
+  - task: NuGetCommand@2
+    displayName: 'dotnet pack $(buildConfiguration)'
+    inputs:
+      command: pack
+      packagesToPack: '**/*.csproj'
+      versioningScheme: byPrereleaseNumber
+      majorVersion: '$(Major)'
+      minorVersion: '$(Minor)'
+      patchVersion: '$(Patch)'

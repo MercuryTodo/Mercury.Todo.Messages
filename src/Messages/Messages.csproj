@@ -3,6 +3,10 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <LangVersion>7.1</LangVersion>
+    <Authors>Nicolas Bontempo</Authors>
+    <Company>Mercury</Company>
+    <Product>Mercury</Product>
+    <Version>0.0.1</Version>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="MassTransit" Version="5.1.5" />
