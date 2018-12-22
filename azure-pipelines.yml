@@ -39,9 +39,5 @@ jobs:
       command: test
       projects: '**/*Tests/*.csproj'
       arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
-  - task: DotNetCoreCLI@2
-    inputs:
-      command: custom
-      projects: '**/*.csproj'
-      custom: 'nuget pack -version $(Major).$(Minor).$(Patch) -Verbosity Detailed'
-      arguments: '--configuration release --output $(build.artifactStagingDirectory)'
+  - script: dotnet pack /p:PackageVersion=$(Major).$(Minor).$(Patch) /p:publishUrl="$(Build.ArtifactStagingDirectory)\" --configuration $(buildConfiguration)
+    displayName: 'dotnet pack'
