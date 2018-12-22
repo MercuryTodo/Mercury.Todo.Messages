@@ -42,9 +42,9 @@ jobs:
   - script: dotnet pack /p:PackageVersion=$(Major).$(Minor).$(Patch) /p:publishUrl="$(Build.ArtifactStagingDirectory)\" --configuration $(buildConfiguration)
     displayName: 'dotnet pack'
   - task: PublishBuildArtifacts@2
+    displayName: 'Publish artifacts'
+    condition: and(succeeded(), not(eq(variables['build.reason'], 'PullRequest')))
     inputs:
       artifactName: artifacts
       parallel: true
       parallelCount: 8
-    displayName: 'Publish artifacts'
-    condition: and(succeeded(), not(eq(variables['build.reason'], 'PullRequest')))
