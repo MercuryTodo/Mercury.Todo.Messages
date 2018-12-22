@@ -33,6 +33,7 @@ jobs:
     displayName: 'dotnet restore'
   - script: dotnet build
     displayName: 'dotnet build'
+    arguments: '--configuration $(buildConfiguration)'
   - task: DotNetCoreCLI@2
     displayName: 'dotnet test'
     inputs:
