@@ -44,7 +44,3 @@ jobs:
   - task: PublishBuildArtifacts@2
     displayName: 'Publish artifacts'
     condition: and(succeeded(), not(eq(variables['build.reason'], 'PullRequest')))
-    inputs:
-      artifactName: artifacts
-      parallel: true
-      parallelCount: 8
