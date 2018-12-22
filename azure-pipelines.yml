@@ -13,8 +13,8 @@ jobs:
     vmImage: 'Ubuntu-16.04'
 
   steps:
+  - script: dotnet restore
   - script: dotnet build
-    displayName: 'Dotnet build $(buildConfiguration)'
   - task: DotNetCoreCLI@2
     displayName: 'Dotnet test $(buildConfiguration)'
     inputs:
@@ -27,9 +27,14 @@ jobs:
     vmImage: 'VS2017-Win2016'
 
   steps:
+  - script: dotnet restore
   - script: dotnet build
-    displayName: 'Dotnet build $(buildConfiguration)'
-
+  - task: DotNetCoreCLI@2
+    displayName: 'Dotnet test $(buildConfiguration)'
+    inputs:
+      command: test
+      projects: '**/*Tests/*.csproj'
+      arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
   - task: NuGetCommand@2
     displayName: 'Dotnet pack'
     inputs:
