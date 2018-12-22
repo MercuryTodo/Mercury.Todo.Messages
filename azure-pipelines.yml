@@ -29,12 +29,7 @@ jobs:
   steps:
   - script: dotnet build
     displayName: 'Dotnet build $(buildConfiguration)'
-  - task: DotNetCoreCLI@2
-    displayName: 'Dotnet test $(buildConfiguration)'
-    inputs:
-      command: test
-      projects: '**/*Tests/*.csproj'
-      arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
+
   - task: NuGetCommand@2
     displayName: 'Dotnet pack'
     inputs:
