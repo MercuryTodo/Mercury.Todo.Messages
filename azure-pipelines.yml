@@ -30,7 +30,7 @@ jobs:
   - script: dotnet restore
   - script: dotnet build
   - task: DotNetCoreCLI@2
-    displayName: 'Dotnet test $(buildConfiguration)'
+    displayName: 'dotnet test'
     inputs:
       command: test
       projects: '**/*Tests/*.csproj'
@@ -39,7 +39,6 @@ jobs:
     displayName: 'Dotnet pack'
     inputs:
       command: pack
-      packagesToPack: '**/*.csproj'
       versioningScheme: byPrereleaseNumber
       majorVersion: '$(Major)'
       minorVersion: '$(Minor)'
