@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Messages.Commands.Models
+namespace Mercury.Todo.Messages.Commands.Models
 {
     public class Tag
     {

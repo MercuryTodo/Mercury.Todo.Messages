@@ -1,4 +1,4 @@
-namespace Messages.Commands.Mail
+namespace Mercury.Todo.Messages.Commands.Mail
 {
     public class SendSecuredEmailMessageBase : SendEmailMessageBase
     {

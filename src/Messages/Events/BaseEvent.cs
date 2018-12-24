@@ -1,4 +1,4 @@
-﻿namespace Messages.Events
+namespace Mercury.Todo.Messages.Events
 {
     public abstract class BaseEvent
     {

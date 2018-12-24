@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 using System.Linq;
 
-namespace Messages.Commands
+namespace Mercury.Todo.Messages.Commands
 {
     public class Request
     {

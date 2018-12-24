@@ -1,4 +1,4 @@
-﻿namespace Messages.Commands
+namespace Mercury.Todo.Messages.Commands
 {
     public abstract class FileUploadCommand : AuthenticatedCommand
     {

@@ -1,4 +1,4 @@
-﻿namespace Messages.Commands.Models
+namespace Mercury.Todo.Messages.Commands.Models
 {
     public class File
     {

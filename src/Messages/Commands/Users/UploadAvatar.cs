@@ -1,6 +1,6 @@
-﻿using Messages.Commands.Models;
+using Mercury.Todo.Messages.Commands.Models;
 
-namespace Messages.Commands.Users
+namespace Mercury.Todo.Messages.Commands.Users
 {
     public class UploadAvatar : AuthenticatedCommand
     {

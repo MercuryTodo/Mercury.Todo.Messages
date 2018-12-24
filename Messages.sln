@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8D5F607F-A80
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{7E5DAE73-4AAC-4D0C-8DC7-C72AB41D6FB1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Messages", "src\Messages\Messages.csproj", "{F97DBEC8-D1A3-4154-82AE-30300D7C42EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mercury.Todo.Messages", "src\Messages\Mercury.Todo.Messages.csproj", "{F97DBEC8-D1A3-4154-82AE-30300D7C42EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

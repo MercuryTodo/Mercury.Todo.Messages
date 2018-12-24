@@ -1,4 +1,4 @@
-﻿namespace Messages.Events.Users
+namespace Mercury.Todo.Messages.Events.Users
 {
     public class SignedIn : BaseEvent
     {

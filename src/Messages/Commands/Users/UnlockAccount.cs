@@ -1,4 +1,4 @@
-namespace Messages.Commands.Users
+namespace Mercury.Todo.Messages.Commands.Users
 {
     public class UnlockAccount : AuthenticatedCommand
     {

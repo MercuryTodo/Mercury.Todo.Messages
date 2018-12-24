@@ -1,7 +1,7 @@
-﻿using MassTransit;
+using MassTransit;
 using System.Threading.Tasks;
 
-namespace Messages
+namespace Mercury.Todo.Messages
 {
     public abstract class BaseConsumer<T> : IConsumer<T> where T : class
     {
