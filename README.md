@@ -3,3 +3,4 @@
 [![Nuget pre-release](https://img.shields.io/nuget/vpre/Mercury.Todo.Messages.svg)](https://www.nuget.org/packages/Mercury.Todo.Messages/)
 
 # Mercury.Todo.Messages
+
